@@ -4,7 +4,9 @@ import credit.Answer;
 import credit.Count;
 import credit.MyForm;
 import credit.Validation;
+import pdf.PdfCreate;
 
+import java.io.DataOutputStream;
 import java.io.IOException;
 
 import javax.servlet.ServletException;
@@ -13,10 +15,15 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.google.gson.Gson;
+import com.itextpdf.text.Document;
+import com.itextpdf.text.DocumentException;
+import com.itextpdf.text.Phrase;
+import com.itextpdf.text.pdf.PdfPCell;
+import com.itextpdf.text.pdf.PdfPTable;
+import com.itextpdf.text.pdf.PdfWriter;
 
-@WebServlet("/hello")
-public class HelloServlet extends HttpServlet{
+@WebServlet("/PdfServlet")
+public class PdfServlet extends HttpServlet{
 	private static final long serialVersionUID = 1L;
 	MyForm form = new MyForm();
 	private double d;
@@ -41,12 +48,15 @@ public class HelloServlet extends HttpServlet{
 						count.CountAns();
 						break;
 				}
-				request.setAttribute("installment", count.returnArray());
-				request.setAttribute("query", request.getQueryString());
-				request.getRequestDispatcher("/answer.jsp").forward(request, response);
-			}
+				PdfCreate create = new PdfCreate();
+				create.createPdf(response, count.returnArray());
+			}		          
 		} catch(NumberFormatException e) {
 			 request.getRequestDispatcher("/ErrorPage.jsp").forward(request, response);
+		} catch (DocumentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 	}
+	   
 }
