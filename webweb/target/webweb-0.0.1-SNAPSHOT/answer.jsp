@@ -29,6 +29,7 @@
 			</tr>
 		</c:forEach>
 		</table>
-				<a href="/PdfServlet?${query}">Pobierz PDF</a>
-		</body>
+		<h3>Czy chcesz wyeksportować tą tabelę do pliku pdf?</h3>
+		<input type="Submit" value="Tak" formaction="/pdf.jsp">
+	</body>
 </html>

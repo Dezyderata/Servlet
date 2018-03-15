@@ -1,4 +1,4 @@
-	<%@ page language="java" contentType="text/html; charset=UTF-8"
+<%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -9,7 +9,6 @@
 <body>
 	<form action="/index.jsp">
 		<h1>Wprowadzone dane były niepoprawne!</h1>
-		${Validation}
 		<h2>Czy chcesz podjąć jeszcze jedną próbe?</h2>
 		<input type="Submit" value="Tak" formaction="/index.jsp">
 	</form>

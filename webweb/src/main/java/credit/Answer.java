@@ -4,7 +4,6 @@ public class Answer {
 	private int numberOfInstallment;
 	private String capital, interest, fixedFee, totalSumOfInstallment;
 	java.text.DecimalFormat df=new java.text.DecimalFormat("0.00");
-	/*kapital, kwota odsetek, oplata stala, calkowita kwota raty*/
 	public Answer() {
 	}
 	public int getNumberOfInstallment() {
