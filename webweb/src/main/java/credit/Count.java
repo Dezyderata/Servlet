@@ -19,11 +19,11 @@ public class Count {
 		double intrest;
 		while(i!=this.form.getNumberOfInstallments()) {
 			Answer ans = new Answer();
-			ans.setNumberOfInstallment(i+1);//rata
-			ans.setFixedFee(fixedFee);//stala
+			ans.setNumberOfInstallment(i+1);
+			ans.setFixedFee(fixedFee);
 			intrest = (sum*(form.getPercent()/100)/12);
-			ans.setInterest(intrest);//odsetki
-			ans.setCapital(sum);//kapital
+			ans.setInterest(intrest);
+			ans.setCapital(sum);
 			total = fixedFee+intrest;
 			ans.setTotalSumOfInstallment(total);
 			sum-=fixedFee;
