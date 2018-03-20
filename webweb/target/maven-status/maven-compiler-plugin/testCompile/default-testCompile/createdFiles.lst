@@ -1,0 +1,6 @@
+test/CountDecreaseTest.class
+test/CountEqualsTest.class
+test/ValidationInstallmentsTest.class
+test/ValidationPercentTest.class
+test/ValidationFixedFeeTest.class
+test/ValidationCreditTest.class
